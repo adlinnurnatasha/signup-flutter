@@ -41,12 +41,12 @@ class _State extends State<MyApp> {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextFormField(
-                    validator: (value) {
+                    /*validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your full name';
                   }
                   return null;
-                  },
+                  },*/
                     controller: nameController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -57,7 +57,7 @@ class _State extends State<MyApp> {
                 Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child: TextFormField(
-                    validator: (String? value) {
+                    /*validator: (String? value) {
                         if (value == null || value.isEmpty) {
                             return 'Please enter your email';
                         }else if (value.isEmpty ||
@@ -66,7 +66,7 @@ class _State extends State<MyApp> {
                             return 'Please enter a valid email!';
                         }
                         return null;
-                        },
+                        },*/
                     controller: emailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -77,12 +77,12 @@ class _State extends State<MyApp> {
                 Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child: TextFormField(
-                    validator: (value) {
+                    /*validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter a password';
                       }
                         return null;
-                      },
+                      },*/
                     obscureText: true,
                     controller: passwordController,
                     decoration: InputDecoration(
@@ -160,8 +160,8 @@ class _DropDownListState extends State<DropDownList> {
   @override
     Widget build(BuildContext context) {
       return DropdownButtonFormField<String>(
-          validator: (value) => value == null ? 'Please select your gender' : null,
-          isExpanded: true,
+          /*validator: (value) => value == null ? 'Please select your gender' : null,
+          isExpanded: true,*/
           value: chosenGender,
           icon: Icon(Icons.keyboard_arrow_down_rounded),
           hint: Text('Select your gender'),
