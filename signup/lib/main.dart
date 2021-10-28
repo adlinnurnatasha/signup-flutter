@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:validators/validators.dart';
  
 void main() {
   runApp(MaterialApp(
@@ -51,6 +52,16 @@ class _State extends State<MyApp> {
                 Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child: TextField(
+                    /*validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                        }else if (value.isEmpty ||
+                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        .hasMatch(value)) {
+                            return 'Please enter a valid email!';
+                        }
+                        return null;
+                        },*/
                     controller: emailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -132,31 +143,29 @@ _DropDownListState createState() => _DropDownListState();
 }
 
 class _DropDownListState extends State<DropDownList> {
-var chosenGender;
+    var chosenGender;
 
-@override
-Widget build(BuildContext context) {
-return DropdownButton<String>(
-value: chosenGender,
-icon: Icon(Icons.keyboard_arrow_down_rounded),
-hint: Text('Select your gender'),
-items: <String>[
-'Male',
-'Female',
-'Prefer not to say'
-].map<DropdownMenuItem<String>>((String value) {
-return DropdownMenuItem<String>(
-value: value,
-child: Text(value),
-);
-}).toList(),
-onChanged: (String? value) {
-setState(() {
-chosenGender = value;
-print(value);
-});
-},
-);
-}
-
+  @override
+    Widget build(BuildContext context) {
+      return DropdownButton<String>(
+          value: chosenGender,
+          icon: Icon(Icons.keyboard_arrow_down_rounded),
+          hint: Text('Select your gender'),
+          items: <String>[
+              'Male',
+              'Female',
+              'Prefer not to say'
+          ].map<DropdownMenuItem<String>>((String value) {
+      return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+      );
+    }).toList(),
+    onChanged: (String? value) {
+      setState(() {
+        chosenGender = value;
+        print(value);
+    });
+  },
+);}
 }
