@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:validators/validators.dart';
  
 void main() {
   runApp(MaterialApp(
@@ -16,7 +15,7 @@ class _State extends State<MyApp> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
- 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,7 +141,8 @@ class _State extends State<MyApp> {
                       style: ElevatedButton.styleFrom(
                           primary: Colors.pinkAccent[400],
                     )),
-                )],
+                )
+                ],
             )));
   }
 
