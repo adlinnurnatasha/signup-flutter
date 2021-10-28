@@ -143,8 +143,7 @@ hint: Text('Select your gender'),
 items: <String>[
 'Male',
 'Female',
-'Other',
-'Rather not to say'
+'Prefer not to say'
 ].map<DropdownMenuItem<String>>((String value) {
 return DropdownMenuItem<String>(
 value: value,
